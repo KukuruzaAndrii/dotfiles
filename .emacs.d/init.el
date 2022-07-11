@@ -140,7 +140,7 @@
 ;; path to backups files
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
 
-(require 'ido)
+(rc/require 'ido)
 (ido-mode t)
 (ido-everywhere 1)
 ;;(ido-ubiquitous-mode 1)
@@ -159,3 +159,5 @@
 (global-set-key (kbd "C-c C-<")     'mc/mark-all-like-this)
 (global-set-key (kbd "C-\"")        'mc/skip-to-next-like-this)
 (global-set-key (kbd "C-:")         'mc/skip-to-previous-like-this)
+
+(rc/require 'haskell-mode)

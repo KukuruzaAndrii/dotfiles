@@ -161,3 +161,10 @@
 (global-set-key (kbd "C-:")         'mc/skip-to-previous-like-this)
 
 (rc/require 'haskell-mode)
+
+
+;; no tabs
+(setq-default indent-tabs-mode nil)
+
+(add-hook 'java-mode-hook (lambda ()
+    (setq c-basic-offset 2)))

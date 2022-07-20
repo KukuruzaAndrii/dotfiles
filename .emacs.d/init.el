@@ -3,7 +3,7 @@
 
 ;; turn off menubar
 (menu-bar-mode 0)
-(tool-bar-mode 0)
+(if system-window (tool-bar-mode 0))
 ;(column-number-mode 1)
 
 ;; map backspace [delete-backward-char] to C-h
@@ -146,6 +146,7 @@
 ;;(ido-ubiquitous-mode 1)
 
 ;; smex
+(rc/require 'smex)
 (global-set-key (kbd "M-x") 'smex)
 
 

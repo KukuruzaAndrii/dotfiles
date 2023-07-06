@@ -126,13 +126,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (deeper-blue)))
+ '(custom-enabled-themes '(deeper-blue))
  '(custom-safe-themes
-   (quote
-    ("3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" default)))
+   '("3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" default))
  '(package-selected-packages
-   (quote
-    (multiple-cursors gruber-darker-theme smex move-text))))
+   '(nasm-mode haskell-mode multiple-cursors gruber-darker-theme smex move-text)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -168,9 +166,15 @@
 
 
 ;; no tabs
-(setq-default indent-tabs-mode nil)
-
+(setq-default indent-tabs-mode t)
+(setq c-basic-offset 8)
 (add-hook 'java-mode-hook (lambda ()
     (setq c-basic-offset 2)))
 
 (setq compilation-ask-about-save nil)
+
+;;asm mode
+(rc/require 'nasm-mode)
+(add-to-list 'auto-mode-alist '("\\.asm\\'" . nasm-mode))
+
+
